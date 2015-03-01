@@ -69,9 +69,9 @@ do
                 # http://projects.puppetlabs.com/issues/9670#note-14
                 sed -i -e '/^import / d' $TMPFILE >/dev/null 2>&1
                 # Puppet syntax check
-                puppet parser validate $TMPFILE >/dev/null 2>&1
+                puppet parser validate --parser future $TMPFILE >/dev/null 2>&1
                 if [[ $? -ne 0 ]]; then
-                    echo "Puppet syntax error in ${file}. Run 'puppet parser validate ${file}'" >&2
+                    echo "Puppet syntax error in ${file}. Run 'puppet parser validate --parser future ${file}'" >&2
                     STATUS=2
                 fi
 
