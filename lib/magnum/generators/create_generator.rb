@@ -23,10 +23,15 @@ module Magnum
     def write_emptydirs
       empty_directory target.join('manifests')
       empty_directory target.join('templates')
+      empty_directory target.join('environments')
       empty_directory target.join('files')
       empty_directory target.join('spec')
       empty_directory target.join('serverspec/spec')
       empty_directory target.join('.vagrant_puppet')
+    end
+
+    def create_environment_symlink
+      create_link target.join("environments/production"), "/etc/puppet" 
     end
 
     def write_readme

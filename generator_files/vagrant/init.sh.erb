@@ -22,7 +22,7 @@ if [ ! -e $STAGE ]; then
   echo "Initial provision, running the magnum-vagrant shell provisioner script..."
 
   # update system apt cache
-  apt-get update
+  #apt-get update
 
   if [ ! -d '/etc/puppet' ]; then
     mkdir /etc/puppet
