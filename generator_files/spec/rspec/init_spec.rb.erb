@@ -2,5 +2,6 @@
 require_relative '../spec_helper'
 
 describe '<%= module_name %>' do
+  let(:facts) { { :osfamily => 'Redhat', :operatingsystemrelease => '6.6', :concat_basedir => '/var/tmp' } }
   it { should compile }
 end
