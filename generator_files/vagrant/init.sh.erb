@@ -23,6 +23,8 @@ if [ ! -e $STAGE ]; then
 
   # update system apt cache
   #apt-get update
+  # Disable Firewall
+  service iptables stop
 
   if [ ! -d '/etc/puppet' ]; then
     mkdir /etc/puppet
